@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 29 11:05:53 2019
-
-@author: LiXiaoGang
-"""
 
 import os
 import cv2 as cv
@@ -22,7 +17,7 @@ for j in range(len(labels.Class_name)):
     dst_clips_path = os.path.join(path,'Data',class_name)
     
     video_names = os.listdir(src_video_path)
-    fourcc = cv.VideoWriter_fourcc(*'XVID')  # 保存视频的编码
+    fourcc = cv.VideoWriter_fourcc(*'XVID')
     
     for name in video_names:
         
