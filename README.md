@@ -1,6 +1,8 @@
 # Action Recognition
 This is the implementation of C3D approach for Action Recognition in Tensorflow. It contains complete code for training,test and preprocessing.Besides,this repository is easy-to-use and can be develpmented onLinux and Windows.  
 
+[Tran, D. , Bourdev, L. , Fergus, R. , Torresani, L. , & Paluri, M. . (2014). Learning spatiotemporal features with 3d convolutional networks.](https://arxiv.org/abs/1412.0767)
+
 ## Getting Started
 ### 1 Prerequisites  
 * Python3.6  
@@ -9,7 +11,7 @@ This is the implementation of C3D approach for Action Recognition in Tensorflow.
 * Pandas  
 
 ### 2 Download this repo and unzip it.  
-'cd' ../C3D/Label_Map,open the label.txt and revise its class names as yours.  
+cd ../C3D/Label_Map,open the label.txt and revise its class names as yours.  
 
 ### 3 Genreate directory.  
 cd ../C3D/Code,run python make_dir.py  
