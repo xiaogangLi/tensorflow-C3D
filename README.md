@@ -20,7 +20,7 @@ Open the label.txt and revise its class names as yours.
 Then some subfolders will be generated in ../C3D/Raw_Data and ../C3D/Data,where name of the subfolders is your class names defined in label.txt.  
 
 ### 4 Prepare video clips for training  
-According to the class, copy your raw videos to subfolders in ../C3D/Raw_Data.  
+According to the class, copy your raw videos to subfolders in ../C3D/Raw_Data. Optionally, you can use the public HMDB-51 dataset, which can be found [here](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/).  
 `cd ../C3D/Code`  
 `run python prepare_clips.py`  
 Clips generated will be saved in the subfolders in ../C3D/Data.  
