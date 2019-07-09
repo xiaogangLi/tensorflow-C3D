@@ -1,5 +1,5 @@
 # Action Recognition
-This is the implementation of C3D approach for Action Recognition in Tensorflow.It contains complete code for training,test and preprocessing.Besids,this repository is easy-to-use and can be develpmented onLinux and Windows.
+This is the implementation of C3D approach for Action Recognition in Tensorflow. It contains complete code for training,test and preprocessing.Besides,this repository is easy-to-use and can be develpmented onLinux and Windows.
 
 ## Getting Started
 
@@ -45,12 +45,12 @@ Note we do not use batch during test. There is out of memory errors with a large
 cd ../C3D,run tensorboard --logdir=Model/ , open the URL in browser to visualize mdoel.
 
 
-NOTE
-
+## NOTE
 When training on my dataset, the loss values are very very big(e.g, 2.5e+19), which lead to a failure for training.
 I found the value Z (Z=WX+b) is gradually increasing，when adding 3D convolution layers. I have tried using some tricks to deal with this but they didn't work.If you have other advice,please tell me. Thank you!
 
-使用方法：
+
+## 使用方法：
 
 1、安装环境依赖项
  ① Python3.6
