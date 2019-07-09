@@ -1,9 +1,7 @@
 # Action Recognition
-This is the implementation of VTN approach for Action Recognition in Tensorflow.
-It contains complete code for training,test and preprocessing.Besids,this repository is easy-to-use and can be develpmented on
-Linux and Windows.
+This is the implementation of VTN approach for Action Recognition in Tensorflow.It contains complete code for training,test and preprocessing.Besids,this repository is easy-to-use and can be develpmented onLinux and Windows.
 
-Getting Started
+##Getting Started
 
 1 Prerequisites
 Python3.6
