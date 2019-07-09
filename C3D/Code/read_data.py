@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 29 15:46:30 2019
-
-@author: LiXiaoGang
-"""
 
 import os 
 import random
