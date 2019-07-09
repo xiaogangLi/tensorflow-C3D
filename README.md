@@ -12,28 +12,28 @@ This is the implementation of C3D approach for Action Recognition in Tensorflow.
 
 ### 2 Download this repo and unzip it  
 `cd ../C3D/Label_Map`  
-Open the label.txt and revise its class names as yours.  
+Open the `label.txt` and revise its class names as yours.  
 
 ### 3 Genreate directory  
 `cd ../C3D/Code`  
 `run python make_dir.py`  
-Then some subfolders will be generated in ../C3D/Raw_Data and ../C3D/Data, where name of the subfolders is your class names defined in label.txt.  
+Then some subfolders will be generated in `../C3D/Raw_Data` and `../C3D/Data`, where name of the subfolders is your class names defined in label.txt.  
 
 ### 4 Prepare video clips for training  
 According to the class, copy your raw videos to subfolders in ../C3D/Raw_Data. Optionally, you can use the public HMDB-51 dataset, which can be found [here](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/).  
 `cd ../C3D/Code`  
 `run python prepare_clips.py`  
-Clips generated will be saved in the subfolders in ../C3D/Data.  
+Clips generated will be saved in the subfolders in `../C3D/Data`.  
 
 ### 5 Compute the mean image from training clips(the original paper without this step)  
 `cd ../C3D/Code`  
 `run python mean_img.py`    
-And then a mean image is saved in directory ../C3D/Data.  
+And then a mean image is saved in directory `../C3D/Data`.  
 
 ### 6 Training model  
 `cd ../C3D/Code`  
 `run python train.py PB` or `python train.py CHECKPOINT`  
-The model will be saved in directory ../C3D/Model, where "PB" and "CHECKPOINT" is two ways used for saving model for Tensorflow.  
+The model will be saved in directory `../C3D/Model`, where "PB" and "CHECKPOINT" is two ways used for saving model for Tensorflow.  
  
 ### 7 Test model  
 According to Step 4,preparing video clips for test.  
@@ -62,7 +62,7 @@ When training on my dataset, the loss values are very very big(e.g, 2.5e+19), wh
  ④ Pandas  
 
 ### 2、下载这个工程到任意目录并解压  
-① 切换到目录 `../C3D/Label_Ma`p,打开label.txt,将其中已有的类名修改为你的类名和对应的id。  
+① 切换到目录 `../C3D/Label_Ma`p,打开`label.txt`,将其中已有的类名修改为你的类名和对应的id。  
 
 ### 3、创建保存数据的目录  
 ① 切换到目录 `../C3D/Code`,然后运行：`python make_dir.py`，在目录`../C3D/Raw_Data` 和`../C3D/Data` 中将会创建子文件夹，文件夹名字为你的类名。  
