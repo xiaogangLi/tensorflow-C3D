@@ -25,10 +25,10 @@ for j in range(len(labels.Class_name)):
         cap = cv.VideoCapture(os.path.join(src_video_path,name))
         if cap.isOpened():
             
-            num_frames = int(cap.get(7))    # Number of frames in the video file.
+            num_frames = int(cap.get(7))
             if num_frames < parameters.IN_DEPTH:continue
-            frame_width = int(cap.get(3))    # Width of the frames in the video stream.
-            frame_height = int(cap.get(4) )   # Height of the frames in the video stream.
+            frame_width = int(cap.get(3))
+            frame_height = int(cap.get(4) )
             
             
             frame_list = []
