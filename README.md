@@ -80,7 +80,8 @@ When training on my dataset, the loss values are very very big(e.g, 2.5e+19), wh
 
 ### 7、测试模型（使用PB模型）  
 ① 根据步骤4，生成测试数据集的视频片段，同样也保存在`../C3D/Data`的子文件夹中。  
-② 切换到目录 `../C3D/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。由于在测试集上测试时，并没有把测试集划分成多个batch来测试，如果一次性把测试集读入内存，内存可能不够。此时需要进一步修改`test.py`来实现批量测试。
+② 切换到目录 `../C3D/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。  
+注：由于在测试集上测试时，并没有把测试集划分成多个batch来测试，如果一次性把测试集读入内存，内存可能不够。此时需要进一步修改`test.py`来实现批量测试。
   
 
 ### 8、Tensorflow可视化模型  
