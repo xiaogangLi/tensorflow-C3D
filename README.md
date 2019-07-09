@@ -11,31 +11,42 @@ This is the implementation of C3D approach for Action Recognition in Tensorflow.
 * Pandas  
 
 ### 2 Download this repo and unzip it.  
-cd ../C3D/Label_Map,open the label.txt and revise its class names as yours.  
+cd ../C3D/Label_Map  
+Open the label.txt and revise its class names as yours.  
 
 ### 3 Genreate directory.  
-cd ../C3D/Code,run python make_dir.py  
+cd ../C3D/Code  
+run python make_dir.py  
 Then some subfolders will be generated in ../C3D/Raw_Data and ../C3D/Data,where name of the subfolders is your class names defined in label.txt.  
 
 ### 4 Prepare video clips for training.  
 According to class, copy your raw videos to subfolders in ../C3D/Raw_Data.  
-cd ../C3D/Code,run python prepare_clips.py，clips generated will be saved in the subfolders in ../C3D/Data.  
+cd ../C3D/Code  
+run python prepare_clips.py  
+clips generated will be saved in the subfolders in ../C3D/Data.  
 
 ### 5 Compute the mean image from training clips(the original paper without this step).  
-cd ../C3D/Code,run python mean_img.py.  
+cd ../C3D/Code  
+run python mean_img.py    
 And then a mean image is saved in directory ../C3D/Data.  
 
 ### 6 Training model.  
-cd ../C3D/Code, run python train.py PB or python train.py CHECKPOINT, the model will be saved in directory ../C3D/Model.  
+cd ../C3D/Code  
+run python train.py PB or python train.py CHECKPOINT  
+The model will be saved in directory ../C3D/Model.  
 Where "PB"and "CHECKPOINT" is two ways used for saving model for Tensorflow.  
  
 ### 7 Test model.  
 According to Step 4,preparing video clips for test.  
-cd ../C3D/Code, and run python test.py N, where N is not more than the number of clips in test set.  
+cd ../C3D/Code  
+run python test.py N  
+where N is not more than the number of clips in test set.  
 Note we do not use batch during test. There is out of memory errors with a large N. In this case, you can modify the test.py to use batch.    
 
 ### 8 Visualize using Tensorboard.  
-cd ../C3D,run tensorboard --logdir=Model/ , open the URL in browser to visualize mdoel.  
+cd ../C3D  
+run tensorboard --logdir=Model/   
+Open the URL in browser to visualize mdoel.  
 
 ## Note  
 When training on my dataset, the loss values are very very big(e.g, 2.5e+19), which lead to a failure for training.
