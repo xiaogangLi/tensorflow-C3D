@@ -17,7 +17,7 @@ Open the `label.txt` and revise its class names as yours.
 ### 3 Generate directory  
 `cd ../C3D/Code`  
 `run python make_dir.py`  
-Then some subfolders will be generated in `../C3D/Raw_Data` and `../C3D/Data`, where name of the subfolders is your class names defined in label.txt.  
+Then some subfolders will be generated in `../C3D/Raw_Data` and `../C3D/Data`, where name of the subfolders is your class names defined in `label.txt`.  
 
 ### 4 Prepare video clips for training  
 According to the class, copy your raw videos to subfolders in ../C3D/Raw_Data. Optionally, you can use the public HMDB-51 dataset, which can be found [here](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/).  
@@ -39,7 +39,7 @@ The model will be saved in directory `../C3D/Model`, where "PB" and "CHECKPOINT"
 According to Step 4,preparing video clips for test.  
 `cd ../C3D/Code`  
 `run python test.py N`  
-Where N is not more than the number of clips in test set. Note we do not use batch during test. There is out of memory errors with a large N. In this case, you can modify the test.py to use batch.    
+Where N is not more than the number of clips in test set. Note we do not use batch during test. There is out of memory errors with a large N. In this case, you can modify the `test.py` to use batch.    
 
 ### 8 Visualize using Tensorboard  
 `cd ../C3D`  
@@ -80,7 +80,8 @@ When training on my dataset, the loss values are very very big(e.g, 2.5e+19), wh
 
 ### 7、测试模型（使用PB模型）  
 ① 根据步骤4，生成测试数据集的视频片段，同样也保存在`../C3D/Data`的子文件夹中。  
-② 切换到目录 `../C3D/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。  
+② 切换到目录 `../C3D/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。由于在测试集上测试时，并没有把测试集划分成多个batch来测试，如果一次性把测试集读入内存，内存可能不够。此时需要进一步修改`test.py`来实现批量测试。
+  
 
 ### 8、Tensorflow可视化模型  
 ① 切换到目录 `../C3D/`，执行：`tensorboard --logdir=Model/`，然后将显示的网站复制到浏览器中打开，可查看模型结构。  
