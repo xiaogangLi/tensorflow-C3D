@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue May 14 17:54:53 2019
-
-@author: LiXiaoGang
-"""
 
 import parameters
 import tensorflow as tf
