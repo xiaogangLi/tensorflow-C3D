@@ -14,7 +14,7 @@ This is the implementation of C3D approach for Action Recognition in Tensorflow.
 `cd ../C3D/Label_Map`  
 Open the `label.txt` and revise its class names as yours.  
 
-### 3 Genreate directory  
+### 3 Generate directory  
 `cd ../C3D/Code`  
 `run python make_dir.py`  
 Then some subfolders will be generated in `../C3D/Raw_Data` and `../C3D/Data`, where name of the subfolders is your class names defined in label.txt.  
