@@ -3,7 +3,7 @@ This is the implementation of C3D approach for Action Recognition in Tensorflow.
 
 ## Getting Started
 
-1 Prerequisites  
+### 1 Prerequisites  
 *Python3.6  
 *Tensorflow  
 *Opencv-python  
