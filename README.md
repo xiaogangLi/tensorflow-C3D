@@ -17,7 +17,7 @@ Open the label.txt and revise its class names as yours.
 ### 3 Genreate directory  
 `cd ../C3D/Code`  
 `run python make_dir.py`  
-Then some subfolders will be generated in ../C3D/Raw_Data and ../C3D/Data,where name of the subfolders is your class names defined in label.txt.  
+Then some subfolders will be generated in ../C3D/Raw_Data and ../C3D/Data, where name of the subfolders is your class names defined in label.txt.  
 
 ### 4 Prepare video clips for training  
 According to the class, copy your raw videos to subfolders in ../C3D/Raw_Data. Optionally, you can use the public HMDB-51 dataset, which can be found [here](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/).  
@@ -47,7 +47,7 @@ Where N is not more than the number of clips in test set. Note we do not use bat
 Open the URL in browser to visualize model.  
 
 ## Note  
-When training on my dataset, the loss values are very very big(e.g, 2.5e+19), which lead to a failure for training. I found the value Z (Z=WX+b) is gradually increasing，when adding 3D convolution layers. I have tried using some tricks to deal with this but they didn't work. If you have other advice,please tell me. Thank you!  
+When training on my dataset, the loss values are very very big(e.g, 2.5e+19), which lead to a failure for training. I found the value Z (Z=WX+b) is gradually increasing，when adding 3D convolution layers. I have tried using some tricks to deal with this but they didn't work. If you have other advice, please tell me. Thank you!  
 
 
 ## 使用方法  
