@@ -9,7 +9,7 @@ This is the implementation of C3D approach for Action Recognition in Tensorflow.
 * Pandas  
 
 ### 2 Download this repo and unzip it.  
-cd ../C3D/Label_Map,open the label.txt and revise its class names as yours.  
+'cd' ../C3D/Label_Map,open the label.txt and revise its class names as yours.  
 
 ### 3 Genreate directory.  
 cd ../C3D/Code,run python make_dir.py  
