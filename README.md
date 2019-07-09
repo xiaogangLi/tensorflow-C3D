@@ -49,6 +49,9 @@ Open the URL in browser to visualize model.
 ## Note  
 When training on my dataset, the loss values are very very big(e.g, 2.5e+19), which lead to a failure for training. I found the value Z (Z=WX+b) is gradually increasing，when adding 3D convolution layers. I have tried using some tricks to deal with this but they didn't work. If you have other advice, please tell me. Thank you!  
 
+## Other Implementations
+[tensorflow-VTN](https://github.com/xiaogangLi/tensorflow-VTN)
+
 
 ## 使用方法  
 
@@ -85,4 +88,6 @@ When training on my dataset, the loss values are very very big(e.g, 2.5e+19), wh
 ## 提示  
 模型在训练过程中，loss值异常的大，导致网络难以训练。调试中发现，随着网络的层数增加，W*X越来越大（Z=W*X+b）,目前尝试了几种方法来解决，但是不起作用，如果你其他建议，欢迎一起讨论，谢谢。  
 
+## 其他版本
+[tensorflow-VTN](https://github.com/xiaogangLi/tensorflow-VTN)
 
