@@ -46,10 +46,10 @@ Note we do not use batch during test. There is out of memory errors with a large
 ### 8 Visualize using Tensorboard  
 `cd ../C3D`  
 `run tensorboard --logdir=Model/`   
-Open the URL in browser to visualize mdoel.  
+Open the URL in browser to visualize model.  
 
 ## Note  
-When training on my dataset, the loss values are very very big(e.g, 2.5e+19), which lead to a failure for training.I found the value Z (Z=WX+b) is gradually increasing，when adding 3D convolution layers. I have tried using some tricks to deal with this but they didn't work.If you have other advice,please tell me. Thank you!  
+When training on my dataset, the loss values are very very big(e.g, 2.5e+19), which lead to a failure for training. I found the value Z (Z=WX+b) is gradually increasing，when adding 3D convolution layers. I have tried using some tricks to deal with this but they didn't work. If you have other advice,please tell me. Thank you!  
 
 
 ## 使用方法  
