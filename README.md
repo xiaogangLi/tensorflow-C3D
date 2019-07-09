@@ -83,7 +83,7 @@ When training on my dataset, the loss values are very very big(e.g, 2.5e+19), wh
 ② 切换到目录 `../C3D/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。  
 
 ### 8、Tensorflow可视化模型  
-① 切换到目录 `../C3D/`，执行：`tensorboard --logdir=Model/`，然后将显示的网站复制到浏览器中打开，可看到模型结构。  
+① 切换到目录 `../C3D/`，执行：`tensorboard --logdir=Model/`，然后将显示的网站复制到浏览器中打开，可查看模型结构。  
 
 ## 提示  
 模型在训练过程中，loss值异常的大，导致网络难以训练。调试中发现，随着网络的层数增加，W*X越来越大（Z=W*X+b）,目前尝试了几种方法来解决，但是不起作用，如果你其他建议，欢迎一起讨论，谢谢。  
