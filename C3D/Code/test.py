@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 30 20:06:48 2019
-
-@author: LiXiaoGang
-"""
 
 import os
 import sys
