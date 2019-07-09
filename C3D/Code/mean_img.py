@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 30 10:49:30 2019
-
-@author: LiXiaoGang
-"""
-
 
 '''
     Compute a mean image from the train set. 
