@@ -1,19 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 28 15:46:14 2019
-
-@author: LiXiaoGang
-https://tensorflow.google.cn/
-https://github.com/tensorflow/serving
-https://blog.csdn.net/thriving_fcl/article/details/75213361
-https://www.cnblogs.com/mbcbyq-2137/p/10044837.html
-https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python/saved_model
-
-https://cv-tricks.com/tensorflow-tutorial/save-restore-tensorflow-models-quick-complete-tutorial/
-
-https://www.jianshu.com/p/e5e36ffde809
-https://www.jianshu.com/p/9221fbf52c55
-"""
 
 import os
 import sys
@@ -58,8 +43,8 @@ def training_net():
     loss = net_loss(clip_Y,logits)
     train_step = tf.train.AdamOptimizer(parameters.LEARNING_RATE).minimize(loss)
      
-    Saver = tf.train.Saver()    # Saver
-    with tf.Session() as sess:    # Launch the graph in a session.
+    Saver = tf.train.Saver()
+    with tf.Session() as sess:
         
         # Create a summary writer, add the 'graph' to the event file.
         writer = tf.summary.FileWriter(parameters.CHECKPOINT_MODEL_SAVE_PATH, sess.graph)     
@@ -71,7 +56,6 @@ def training_net():
             feed_dict = {clip_X:X,clip_Y:Y}
             _,loss_ = sess.run([train_step,loss],feed_dict=feed_dict)
             
-            # ------------------------------- Save model --------------------------
             if i % 100 == 0: 
                 
                 # Way 1 : saving checkpoint model
