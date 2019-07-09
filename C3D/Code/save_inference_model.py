@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 30 18:45:21 2019
-https://github.com/tensorflow/serving/blob/master/tensorflow_serving/g3doc/signature_defs.md
-@author: LiXiaoGang
-"""
 
 import tensorflow as tf
 
@@ -30,14 +25,12 @@ def inference(model_save_path,clip):
     with tf.Session() as sess:
         
         meta_graph_def = tf.saved_model.loader.load(sess,[MODEL_NAME],model_save_path)
-        signature = meta_graph_def.signature_def    # 从meta_graph_def中取出SignatureDef对象
+        signature = meta_graph_def.signature_def
         
-        # 从signature中找出具体输入输出的tensor name 
         x_tensor_name = signature[SIGNATURE_KEY].inputs[INPUT_KEY].name
         y_tensor_name = signature[SIGNATURE_KEY].outputs[OUTPUT_KEY].name
                                  
         
-        # 获取tensor
         x_tensor = sess.graph.get_tensor_by_name(x_tensor_name)
         y_tensor = sess.graph.get_tensor_by_name(y_tensor_name)
         
