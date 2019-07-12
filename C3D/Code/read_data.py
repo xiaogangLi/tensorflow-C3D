@@ -47,7 +47,7 @@ def read_dataset(path,labels,seed=0,balance=True):
 
 def read_minibatch(i,batch_size,all_clips_name,mean_image):
     
-    start = i*batch_size
+    start = (i*batch_size) % len(all_clips_name)
     end = min(start+batch_size,len(all_clips_name))
     
     batch_clips_name = all_clips_name[start:end]
