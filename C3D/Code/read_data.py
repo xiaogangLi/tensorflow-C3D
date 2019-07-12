@@ -54,9 +54,14 @@ def read_minibatch(i,batch_size,all_clips_name,mean_image):
     batch_clips_name = all_clips_name[start:end]
     clip_Y = encode_label.onehotencode(batch_clips_name)
     
-    clip_X = np.zeros([batch_size,parameters.IN_DEPTH,parameters.IN_HEIGHT,
-                       parameters.IN_WIDTH,parameters.IN_CHANNEL],dtype=np.float32)
-    clip = np.zeros([parameters.IN_DEPTH,parameters.IN_HEIGHT,parameters.IN_WIDTH,
+    clip_X = np.zeros([batch_size,
+                       parameters.IN_DEPTH,
+                       parameters.IN_HEIGHT,
+                       parameters.IN_WIDTH,
+                       parameters.IN_CHANNEL],dtype=np.float32)
+    clip = np.zeros([parameters.IN_DEPTH,
+                     parameters.IN_HEIGHT,
+                     parameters.IN_WIDTH,
                      parameters.IN_CHANNEL],dtype=np.float32)
     
     for i in range(min(batch_size,end-start)):
