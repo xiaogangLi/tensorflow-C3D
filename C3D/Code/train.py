@@ -4,7 +4,6 @@ import os
 import sys
 import shutil
 import c3d_net
-import cv2 as cv
 import parameters
 import numpy as np
 import pandas as pd
@@ -16,7 +15,7 @@ import save_inference_model
 def load_clip_name(path):
     labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))    # load label.txt
     all_clips_name = rd.read_dataset(path,labels,seed=66,balance=True)    # train set
-    mean_image = cv.imread(os.path.join(path,'Data','mean_image.jpg')).astype(np.float32)    # read mean image
+    mean_image = np.load(os.path.join(path,'Data','mean_image.npy'))    # read mean image
     return all_clips_name,mean_image
         
  
