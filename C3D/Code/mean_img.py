@@ -36,5 +36,6 @@ for i in range(num_classess):
                 mean_image = mean_image + frame
                
 mean_image = mean_image/count
+np.save(os.path.join(path,'Data','mean_image.npy'),mean_image)
 cv.imwrite(os.path.join(path,'Data','mean_image.jpg'),mean_image)
 cap.release()    
