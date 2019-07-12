@@ -16,7 +16,6 @@ def read_dataset(path,labels,seed=0,balance=True):
     
     max_len = 0
     for i in range(num_classess):
-        
         label_list_per_class = os.listdir(os.path.join(path,'Data',Class_name[i]))
         all_label_list.append(label_list_per_class)
         
@@ -65,7 +64,6 @@ def read_minibatch(i,batch_size,all_clips_name,mean_image):
                      parameters.IN_CHANNEL],dtype=np.float32)
     
     for i in range(min(batch_size,end-start)):
-        
         folder = batch_clips_name[i].split('_')[0]
         cap = cv.VideoCapture(os.path.join(os.path.dirname(os.getcwd()),'Data',folder,batch_clips_name[i]))
         
