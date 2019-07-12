@@ -20,7 +20,7 @@ num_classess = len(labels.Class_name)
 
 
 count = 0
-mean_image = np.zeros([parameters.IN_HEIGHT,parameters.IN_WIDTH,parameters.IN_CHANNEL])
+mean_image = np.zeros([parameters.IN_HEIGHT,parameters.IN_WIDTH,parameters.IN_CHANNEL],dtype=np.float32)
 for i in range(num_classess):
     
     clips_name = os.listdir(os.path.join(path,'Data',Class_name[i]))
@@ -32,7 +32,7 @@ for i in range(num_classess):
             ret,frame = cap.read()
             if ret == True:
                 count = count + 1
-                frame = cv.resize(frame,(parameters.IN_HEIGHT,parameters.IN_WIDTH))
+                frame = cv.resize(frame,(parameters.IN_HEIGHT,parameters.IN_WIDTH)).astype(np.float32)
                 mean_image = mean_image + frame
                
 mean_image = mean_image/count
