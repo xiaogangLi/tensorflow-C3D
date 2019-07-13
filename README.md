@@ -59,7 +59,7 @@ Open the URL in browser to visualize model.
  ④ Pandas  
 
 ### 2、下载这个工程到任意目录并解压  
-① 切换到目录 `../C3D/Label_Ma`p,打开`label.txt`,将其中已有的类名修改为你的类名和对应的id。  
+① 切换到目录 `../C3D/Label_Map`,打开`label.txt`,将其中已有的类名修改为你的类名和对应的id。  
 
 ### 3、创建保存数据的目录  
 ① 切换到目录 `../C3D/Code`,然后运行：`python make_dir.py`，在目录`../C3D/Raw_Data` 和`../C3D/Data` 中将会创建子文件夹，文件夹名字为你的类名。  
