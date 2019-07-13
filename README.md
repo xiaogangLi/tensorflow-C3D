@@ -44,10 +44,7 @@ Where N is not more than the number of clips in test set. Note we do not use bat
 ### 8 Visualize using Tensorboard  
 `cd ../C3D`  
 `run tensorboard --logdir=Model/`   
-Open the URL in browser to visualize model.  
-
-## Note  
-When training on my dataset, the loss values are very very big(e.g, 2.5e+19), which lead to a failure for training. I found the value Z (Z=WX+b) is gradually increasing，when adding 3D convolution layers. I have tried using some tricks to deal with this but they didn't work. If you have other advice, please tell me. Thank you!  
+Open the URL in browser to visualize model.    
 
 ## Other Implementations
 [tensorflow-VTN](https://github.com/xiaogangLi/tensorflow-VTN)
@@ -82,13 +79,10 @@ When training on my dataset, the loss values are very very big(e.g, 2.5e+19), wh
 ① 根据步骤4，生成测试数据集的视频片段，同样也保存在`../C3D/Data`的子文件夹中。  
 ② 切换到目录 `../C3D/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。  
 注：由于在测试集上测试时，并没有把测试集划分成多个batch来测试，如果一次性把测试集读入内存，内存可能不够。此时需要进一步修改`test.py`来实现批量测试。
-  
 
 ### 8、Tensorflow可视化模型  
 ① 切换到目录 `../C3D/`，执行：`tensorboard --logdir=Model/`，然后将显示的网站复制到浏览器中打开，可查看模型结构。  
-
-## 提示  
-模型在训练过程中，loss值异常的大，导致网络难以训练。调试中发现，随着网络的层数增加，W*X越来越大（Z=W*X+b）,目前尝试了几种方法来解决，但是不起作用，如果你其他建议，欢迎一起讨论，谢谢。  
+  
 
 ## 其他版本
 [tensorflow-VTN](https://github.com/xiaogangLi/tensorflow-VTN)
