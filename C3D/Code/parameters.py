@@ -3,8 +3,6 @@
 import os
 import pandas as pd
 
-path = os.path.dirname(os.getcwd())
-labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))
 
 LEARNING_RATE = 0.0001
 BATCH_SIZE = 30   
@@ -14,7 +12,10 @@ IN_DEPTH = 16
 IN_HEIGHT = 128  
 IN_WIDTH = 128 
 IN_CHANNEL = 3 
-STRIDE = 16 
+STRIDE = 16
+
+path = os.path.dirname(os.getcwd())
+labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))
 
 NUM_CLASSESS = len(labels.Class_name)
 MODEL_NAME = 'model.ckpt-'
