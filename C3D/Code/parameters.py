@@ -7,7 +7,7 @@ path = os.path.dirname(os.getcwd())
 labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))
 
 LEARNING_RATE = 0.0001
-BATCH_SIZE = 2   
+BATCH_SIZE = 30   
 TRAIN_STEPS = 1000
 
 IN_DEPTH = 16      
