@@ -31,7 +31,7 @@ Clips generated will be saved in the subfolders in `../C3D/Data`.
 And then a mean image is saved in directory `../C3D/Data`.  
 
 ### 6 Training model
-The model parameters, training parameters and eval parameters are all defined by `parameters.py`.
+The model parameters, training parameters and eval parameters are all defined by `parameters.py`.  
 `cd ../C3D/Code`  
 `run python train.py PB` or `python train.py CHECKPOINT`  
 The model will be saved in directory `../C3D/Model`, where "PB" and "CHECKPOINT" is two ways used for saving model for Tensorflow.  
