@@ -35,7 +35,7 @@ def predict(clip_Y,clip_X):
         # Compute clip-level accuracy
         if np.argmax(one_output) == np.argmax(one_clip_Y):
             acc_count += 1
-    accuracy = (acc_count/len(prediction))
+    accuracy = (acc_count/(len(prediction)*1.0))
     return prediction,accuracy
                
 
