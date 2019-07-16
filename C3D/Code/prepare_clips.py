@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import random
 import cv2 as cv
 import parameters
 import pandas as pd
@@ -14,22 +15,36 @@ for j in range(len(labels.Class_name)):
     class_name = labels.Class_name[j]
     
     src_video_path = os.path.join(path,'Raw_Data',class_name)
-    dst_clips_path = os.path.join(path,'Data',class_name)
-    
     video_names = os.listdir(src_video_path)
+    random.shuffle(video_names)
+    
     fourcc = cv.VideoWriter_fourcc(*'XVID')
     
+    num_train = int(len(video_names)*(1-2*parameters.rate))
+    num_val = int(len(video_names)*parameters.rate)
+    num_test = int(len(video_names)*parameters.rate) 
+    n = 1 
+                         
     for name in video_names:
-        
         print('Preprocessing:',name)
         cap = cv.VideoCapture(os.path.join(src_video_path,name))
+        
+        if (n<=num_train):
+            dst_clips_path = os.path.join(path,'Data','Train',class_name)
+            
+        elif (num_train<n<=(num_train+num_val)):
+            dst_clips_path = os.path.join(path,'Data','Val',class_name)
+            
+        elif n>(num_train+num_val):
+            dst_clips_path = os.path.join(path,'Data','Test',class_name)
+        n = n + 1
+        
         if cap.isOpened():
             
             num_frames = int(cap.get(7))
             if num_frames < parameters.IN_DEPTH:continue
             frame_width = int(cap.get(3))
-            frame_height = int(cap.get(4) )
-            
+            frame_height = int(cap.get(4))
             
             frame_list = []
             for j in range(num_frames):
@@ -53,4 +68,4 @@ for j in range(len(labels.Class_name)):
                 for k in range(parameters.IN_DEPTH):out.write(clips[k])
                        
 out.release()                       
-cap.release()    
+cap.release() 
