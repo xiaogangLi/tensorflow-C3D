@@ -14,6 +14,8 @@ IN_WIDTH = 128
 IN_CHANNEL = 3 
 STRIDE = 16
 
+rate = 0.2
+
 path = os.path.dirname(os.getcwd())
 labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))
 
