@@ -14,7 +14,7 @@ import save_inference_model
 
 def load_clip_name(path):
     labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))    # load label.txt
-    all_clips_name = rd.read_dataset(path,labels,seed=66,balance=True)    # train set
+    all_clips_name = rd.read_dataset(path,labels,'Train',seed=66,balance=True)    # train set
     mean_image = np.load(os.path.join(path,'Data','mean_image.npy'))    # read mean image
     return all_clips_name,mean_image
         
@@ -51,7 +51,7 @@ def training_net():
         sess.run(init_var_op)
         
         for i in range(parameters.TRAIN_STEPS):
-            Y,X = rd.read_minibatch(i,parameters.BATCH_SIZE,all_clips_name,mean_image)
+            Y,X = rd.read_minibatch(i,parameters.BATCH_SIZE,all_clips_name,mean_image,'Train')
             feed_dict = {clip_X:X,clip_Y:Y}
             _,loss_ = sess.run([train_step,loss],feed_dict=feed_dict)
             
