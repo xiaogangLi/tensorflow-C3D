@@ -19,11 +19,11 @@ Open the `label.txt` and revise its class names as yours.
 `run python make_dir.py`  
 Then some subfolders will be generated in `../C3D/Raw_Data` , `../C3D/Data/Train`,  `../C3D/Data/Test`, `../C3D/Data/Val`, where name of the subfolders is your class names defined in `label.txt`.  
 
-### 4 Prepare video clips for training  
+### 4 Prepare video clips  
 According to the class, copy your raw videos to subfolders in ../C3D/Raw_Data. Optionally, you can use the public HMDB-51 dataset, which can be found [here](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/).  
 `cd ../C3D/Code`  
 `run python prepare_clips.py`  
-Clips generated will be saved in the subfolders in `../C3D/Data`.  
+Clips generated will be saved in the subfolders in  `../C3D/Data/Train`,  `../C3D/Data/Test`, `../C3D/Data/Val`. These clips will be used for training,test and validation.
 
 ### 5 Compute the mean image from training clips(the original paper without this step)  
 `cd ../C3D/Code`  
@@ -67,7 +67,7 @@ Open the URL in browser to visualize model.
 
 ### 4、准备数据，生成视频片段（clips）  
 ① 根据类别，将你自己收集到的原始视频数据复制到目录 `../C3D/Raw_Data` 中对应的文件夹中。  
-② 切换到目录 `../C3D/Code`, 然后运行：`python prepare_clips.py`，每个类生成的视频片段将会保存在`../C3D/Data` 的子文件夹中，将被用于训练模型。  
+② 切换到目录 `../C3D/Code`, 然后运行：`python prepare_clips.py`，每个类生成的视频片段将会保存在 `../C3D/Data/Train`,  `../C3D/Data/Test`, `../C3D/Data/Val` 的子文件夹中，将被用于训练模型。  
 
 ### 5、计算训练集的均值图像  
 ① 切换到目录 `../C3D/Code`,然后运行：`python mean_img.py`，生成的均值图像将会保存在`../C3D/Data` 目录下。  
