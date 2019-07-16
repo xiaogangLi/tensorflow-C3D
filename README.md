@@ -17,7 +17,7 @@ Open the `label.txt` and revise its class names as yours.
 ### 3 Generate directory  
 `cd ../C3D/Code`  
 `run python make_dir.py`  
-Then some subfolders will be generated in `../C3D/Raw_Data` , `../C3D/Data/Train`, `../C3D/Data/Test`,`../C3D/Data/Val`,where name of the subfolders is your class names defined in `label.txt`.  
+Then some subfolders will be generated in `../C3D/Raw_Data` , `../C3D/Data/Train`,  `../C3D/Data/Test`, `../C3D/Data/Val`, where name of the subfolders is your class names defined in `label.txt`.  
 
 ### 4 Prepare video clips for training  
 According to the class, copy your raw videos to subfolders in ../C3D/Raw_Data. Optionally, you can use the public HMDB-51 dataset, which can be found [here](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/).  
