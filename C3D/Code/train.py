@@ -35,6 +35,25 @@ def net_loss(clip_Y,logits):
     return loss
     
 
+    def val(sess,clip_X,clip_Y,Softmax_output,test_batch_size,path,status,balance):
+    all_clips_name,mean_image = load_clip_name(path,status,balance)
+    acc_count = 0
+    
+    for j in range(len(all_clips_name)):
+        if (j*test_batch_size)>len(all_clips_name):
+            break
+        Y,X = rd.read_minibatch(j,test_batch_size,all_clips_name,mean_image,status)
+        feed_dict = {clip_X:X,clip_Y:Y}
+        softmax = sess.run(Softmax_output,feed_dict=feed_dict)
+
+        # Compute clip-level accuracy
+        for one_output,one_clip_Y in zip(softmax,Y):
+            if np.argmax(one_output) == np.argmax(one_clip_Y):
+                acc_count += 1
+    accuracy = (acc_count/(len(all_clips_name)*1.0))
+    return accuracy
+
+
 def training_net():
     all_clips_name,mean_image = load_clip_name(parameters.path,'Train',True)
     clip_X,clip_Y = net_placeholder(None)
@@ -56,6 +75,9 @@ def training_net():
             _,loss_ = sess.run([train_step,loss],feed_dict=feed_dict)
             
             if i % 100 == 0: 
+                # accuracy on val clips
+                val_acc = val(sess,clip_X,clip_Y,Softmax_output,10,parameters.path,'Val',False)
+                print('\nVal_accuracy = %g\n' % (val_acc))
                 
                 # Way 1 : saving checkpoint model
                 if sys.argv[1] == 'CHECKPOINT':                    
