@@ -23,9 +23,9 @@ count = 0
 mean_image = np.zeros([parameters.IN_HEIGHT,parameters.IN_WIDTH,parameters.IN_CHANNEL],dtype=np.float32)
 for i in range(num_classess):
     
-    clips_name = os.listdir(os.path.join(path,'Data',Class_name[i]))
+    clips_name = os.listdir(os.path.join(path,'Data','Train',Class_name[i]))
     for clip in clips_name:
-        cap = cv.VideoCapture(os.path.join(path,'Data',Class_name[i],clip))
+        cap = cv.VideoCapture(os.path.join(path,'Data','Train',Class_name[i],clip))
         num_frames = int(cap.get(7))
         
         for j in range(num_frames):
@@ -36,6 +36,6 @@ for i in range(num_classess):
                 mean_image = mean_image + frame
                
 mean_image = mean_image/count
-np.save(os.path.join(path,'Data','mean_image.npy'),mean_image)
-cv.imwrite(os.path.join(path,'Data','mean_image.jpg'),mean_image)
+np.save(os.path.join(path,'Data','Train','mean_image.npy'),mean_image)
+cv.imwrite(os.path.join(path,'Data','Train','mean_image.jpg'),mean_image)
 cap.release()    
