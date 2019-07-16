@@ -63,7 +63,7 @@ Open the URL in browser to visualize model.
 ① 切换到目录 `../C3D/Label_Map`,打开`label.txt`,将其中已有的类名修改为你的类名和对应的id。  
 
 ### 3、创建保存数据的目录  
-① 切换到目录 `../C3D/Code`,然后运行：`python make_dir.py`，在目录`../C3D/Raw_Data` 、`../C3D/Data/Train`, `../C3D/Data/Test`,`../C3D/Data/Val` 中将会创建子文件夹，文件夹名字为你的类名。  
+① 切换到目录 `../C3D/Code`,然后运行：`python make_dir.py`，在目录`../C3D/Raw_Data` 、`../C3D/Data/Train`、 `../C3D/Data/Test`、`../C3D/Data/Val` 中将会创建子文件夹，文件夹名字为你的类名。  
 
 ### 4、准备数据，生成视频片段（clips）  
 ① 根据类别，将你自己收集到的原始视频数据复制到目录 `../C3D/Raw_Data` 中对应的文件夹中。  
