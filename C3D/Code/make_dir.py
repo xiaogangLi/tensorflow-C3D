@@ -9,13 +9,15 @@ labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))
 
 for i in range(len(labels.Class_name)):
     
-    path1 = os.path.join(path,'Data',labels.Class_name[i])
-    path2 = os.path.join(path,'Raw_Data',labels.Class_name[i])
+    path1 = os.path.join(path,'Data','Train',labels.Class_name[i])
+    path2 = os.path.join(path,'Data','Test',labels.Class_name[i])
+    path3 = os.path.join(path,'Data','Val',labels.Class_name[i])
+    path4 = os.path.join(path,'Raw_Data',labels.Class_name[i])
     
-    if not (os.path.exists(path1) and os.path.exists(path2)):
-        os.mkdir(path1)
-        os.mkdir(path2)
-    else:
-        print('\nDirectory already exists, please delete it!\n')
-        sys.exit(0)
-
+    path_list = [path1,path2,path3,path4]
+    for dirs in path_list:
+        if not os.path.exists(dirs):
+            os.mkdir(dirs)
+        else:
+            print('\nDirectory already exists, please delete it!\n')
+            sys.exit(0)
