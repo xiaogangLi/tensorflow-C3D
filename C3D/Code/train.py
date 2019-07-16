@@ -34,6 +34,7 @@ def net_loss(clip_Y,logits):
     loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=clip_Y,logits=logits),name='loss')
     return loss
     
+    
 def val(sess,clip_X,clip_Y,Softmax_output,test_batch_size,path,status,balance):
     all_clips_name,mean_image = load_clip_name(path,status,balance)
     acc_count = 0
