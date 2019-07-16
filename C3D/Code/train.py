@@ -12,10 +12,10 @@ import tensorflow as tf
 import save_inference_model
 
 
-def load_clip_name(path):
+def load_clip_name(path,status):
     labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))    # load label.txt
-    all_clips_name = rd.read_dataset(path,labels,'Train',seed=66,balance=True)    # train set
-    mean_image = np.load(os.path.join(path,'Data','mean_image.npy'))    # read mean image
+    all_clips_name = rd.read_dataset(path,labels,status,seed=66,balance=True)    # train set
+    mean_image = np.load(os.path.join(path,'Data',status,'mean_image.npy'))    # read mean image
     return all_clips_name,mean_image
         
  
@@ -36,7 +36,7 @@ def net_loss(clip_Y,logits):
     
 
 def training_net():
-    all_clips_name,mean_image = load_clip_name(parameters.path)
+    all_clips_name,mean_image = load_clip_name(parameters.path,'Train')
     clip_X,clip_Y = net_placeholder(None)
     logits,Softmax_output = c3d_net.farward_c3d(clip_X)
     loss = net_loss(clip_Y,logits)
