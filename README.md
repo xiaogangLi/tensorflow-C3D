@@ -77,7 +77,7 @@ Open the URL in browser to visualize model.
 ① 切换到目录 `../C3D/Code`，然后运行`python train.py PB` 或者 `python train.py CHECKPOINT`,参数 "PB" 和 "CHECKPOINT"分别对应Tensorflow保存模型的两种方式。模型保存在 `../C3D/Model`中。  
 
 ### 7、测试模型（使用PB模型）  
-① 使用在 `../C3D/Data/Test` 中的视频片段测试模型。  
+使用在 `../C3D/Data/Test` 中的视频片段测试模型。  
 ② 切换到目录 `../C3D/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。  
 注：由于在测试集上测试时，并没有把测试集划分成多个batch来测试，如果一次性把测试集读入内存，内存可能不够。此时需要进一步修改`test.py`来实现批量测试。
 
