@@ -14,7 +14,7 @@ import save_inference_model
 
 def load_clip_name(path,status,balance):
     labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))    # load label.txt
-    all_clips_name = rd.read_dataset(path,labels,status,seed=66,balance)    # train set
+    all_clips_name = rd.read_dataset(path,labels,status,seed=66,balance=balance)    # train set
     mean_image = np.load(os.path.join(path,'Data','Train','mean_image.npy'))    # read mean image
     return all_clips_name,mean_image
         
