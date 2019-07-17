@@ -42,7 +42,7 @@ Test model using clips in `../C3D/Data/Test`.
 `run python test.py N`  
 Where N is not more than the number of clips in test set. Note we do not use batch during test. There is out of memory errors with a large N. In this case, you can modify the `test.py` to use batch.    
 
-### 8 Visualize using Tensorboard  
+### 8 Visualize model using Tensorboard  
 `cd ../C3D`  
 `run tensorboard --logdir=Model/`   
 Open the URL in browser to visualize model.    
@@ -82,7 +82,7 @@ Open the URL in browser to visualize model.
 ② 切换到目录 `../C3D/Code`，然后运行`python test.py N`,这里N为小于等于测试集中clip的数量的正整数。  
 注：由于在测试集上测试时，并没有把测试集划分成多个batch来测试，如果一次性把测试集读入内存，内存可能不够。此时需要进一步修改`test.py`来实现批量测试。
 
-### 8、Tensorflow可视化模型  
+### 8、Tensorboard 可视化模型  
 ① 切换到目录 `../C3D/`，执行：`tensorboard --logdir=Model/`，然后将显示的链接复制到浏览器中打开，可查看模型结构。  
   
 
