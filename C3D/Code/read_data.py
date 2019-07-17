@@ -80,7 +80,8 @@ def read_minibatch(i,batch_size,all_clips_name,mean_image,status):
         for j in range(parameters.IN_DEPTH):
             ret,frame = cap.read()
             frame = cv.resize(frame,(parameters.IN_HEIGHT,parameters.IN_WIDTH)).astype(np.float32)
-            frame = frame - mean_image    # remove mean image
+            if parameters.remove_mean_image:                
+                frame = frame - mean_image    # remove mean image
             clip[j,:,:,:] = frame
         clip_X[i,:,:,:,:] = clip 
         
