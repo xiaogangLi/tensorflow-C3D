@@ -36,7 +36,7 @@ The model parameters, training parameters and eval parameters are all defined by
 `run python train.py PB` or `python train.py CHECKPOINT`  
 The model will be saved in directory `../C3D/Model`, where "PB" and "CHECKPOINT" is two ways used for saving model for Tensorflow.  
  
-### 7 Test model  
+### 7 Test model(pb)  
 Test model using clips in `../C3D/Data/Test`.  
 `cd ../C3D/Code`  
 `run python test.py N`  
