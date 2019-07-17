@@ -30,7 +30,7 @@ Clips generated will be saved in the subfolders in  `../C3D/Data/Train`,  `../C3
 `run python mean_img.py`    
 And then a mean image is saved in directory `../C3D/Data/Train`.  
 
-### 6 Training model
+### 6 Train model
 The model parameters, training parameters and eval parameters are all defined by `parameters.py`.  
 `cd ../C3D/Code`  
 `run python train.py PB` or `python train.py CHECKPOINT`  
