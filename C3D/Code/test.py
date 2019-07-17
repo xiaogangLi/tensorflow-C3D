@@ -14,7 +14,7 @@ def read_test_data(path):
     num_clips = int(sys.argv[1])    # 0 < num_clips <= the number of clips in test set.
     labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))    # load label.txt
     all_clips_name = rd.read_dataset(path,labels,'Test',seed=66,balance=False)    # test set
-    mean_image = np.load(os.path.join(path,'Data','mean_image.npy'))    # load mean image
+    mean_image = np.load(os.path.join(path,'Data','Train','mean_image.npy'))    # load mean image
     clip_Y,clip_X  = rd.read_minibatch(0,num_clips,all_clips_name,mean_image,'Test')
     return clip_Y,clip_X
 
