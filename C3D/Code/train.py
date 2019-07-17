@@ -65,7 +65,7 @@ def training_net():
     with tf.Session() as sess:
         
         # Create a summary writer, add the 'graph' to the event file.
-        writer = tf.summary.FileWriter(parameters.CHECKPOINT_MODEL_SAVE_PATH, sess.graph)     
+        writer = tf.summary.FileWriter(os.path.join(parameters.path,'Model'), sess.graph)     
         init_var_op = tf.global_variables_initializer()
         sess.run(init_var_op)
         
