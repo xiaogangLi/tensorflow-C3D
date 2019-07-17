@@ -25,7 +25,7 @@ According to the class, copy your raw videos to subfolders in `../C3D/Raw_Data`.
 `run python prepare_clips.py`  
 Clips generated will be saved in the subfolders in  `../C3D/Data/Train`,  `../C3D/Data/Test`, `../C3D/Data/Val`. These clips will be used for training, test and validation.
 
-### 5 Compute the mean image from training clips(the original paper without this step)  
+### 5 Compute the mean image from training clips(optional)  
 `cd ../C3D/Code`  
 `run python mean_img.py`    
 And then a mean image is saved in directory `../C3D/Data/Train`.  
