@@ -30,7 +30,6 @@ def inference(model_save_path,clip):
         x_tensor_name = signature[SIGNATURE_KEY].inputs[INPUT_KEY].name
         y_tensor_name = signature[SIGNATURE_KEY].outputs[OUTPUT_KEY].name
                                  
-        
         x_tensor = sess.graph.get_tensor_by_name(x_tensor_name)
         y_tensor = sess.graph.get_tensor_by_name(y_tensor_name)
         
