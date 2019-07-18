@@ -14,7 +14,7 @@ IN_WIDTH = 128
 IN_CHANNEL = 3 
 STRIDE = 16
 
-rate = 0.2
+rate = 0.2    # the proportion of training and validation videos in the raw videos respectively.
 remove_mean_image = False
 
 path = os.path.dirname(os.getcwd())
