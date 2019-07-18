@@ -26,7 +26,6 @@ def predict(clip_Y,clip_X):
     acc_count = 0
     for one_output,one_clip_Y in zip(output,clip_Y):
         
-
         pred_name = encode_label.onehotdecode(one_output)
         true_name = encode_label.onehotdecode(one_clip_Y)
         prediction.append({'Output':list(one_output),'Predicted_class_name':pred_name,'True_calss_name':true_name})
