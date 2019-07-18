@@ -58,7 +58,8 @@ def read_minibatch(i,batch_size,all_clips_name,mean_image,status):
     batch_clips_name = all_clips_name[start:end]
     clip_Y = encode_label.onehotencode(batch_clips_name)
     
-    clip_X = np.zeros([batch_size,
+    n = min(batch_size,end-start)
+    clip_X = np.zeros([n,
                        parameters.IN_DEPTH,
                        parameters.IN_HEIGHT,
                        parameters.IN_WIDTH,
@@ -68,7 +69,7 @@ def read_minibatch(i,batch_size,all_clips_name,mean_image,status):
                      parameters.IN_WIDTH,
                      parameters.IN_CHANNEL],dtype=np.float32)
     
-    for i in range(min(batch_size,end-start)):
+    for i in range(n):
         folder = batch_clips_name[i].split('_')[0]
         if status == 'Train':
             cap = cv.VideoCapture(os.path.join(os.path.dirname(os.getcwd()),'Data','Train',folder,batch_clips_name[i]))
