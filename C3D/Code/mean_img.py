@@ -11,13 +11,11 @@ import pandas as pd
 import parameters
 
 
-# load label.txt
 path = os.path.dirname(os.getcwd())
 labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))
 
 Class_name = labels.Class_name
 num_classess = len(labels.Class_name)
-
 
 count = 0
 mean_image = np.zeros([parameters.IN_HEIGHT,parameters.IN_WIDTH,parameters.IN_CHANNEL],dtype=np.float32)
