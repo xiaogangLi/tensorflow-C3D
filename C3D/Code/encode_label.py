@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 
 
-# load label.txt
 path = os.path.dirname(os.getcwd())
 labels = pd.read_csv(os.path.join(path,'Label_Map','label.txt'))
 
