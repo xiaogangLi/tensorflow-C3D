@@ -1,7 +1,7 @@
 # Action Recognition
 This is the implementation of 3-dimensional convolutional networks (C3D) approach for Action Recognition in Tensorflow. It contains complete code for preprocessing, training and test. Besides, this repository is easy-to-use and can be developed on Linux and Windows.  
 
-[C3D : Tran, Du, et al. "Learning spatiotemporal features with 3d convolutional networks." Proceedings of the IEEE international conference on computer vision. 2015.](https://arxiv.org/abs/1412.0767)
+[C3D :Tran, Du, et al. "Learning spatiotemporal features with 3d convolutional networks." Proceedings of the IEEE international conference on computer vision. 2015.](https://arxiv.org/abs/1412.0767)
 
 ## Getting Started
 ### 1 Prerequisites  
