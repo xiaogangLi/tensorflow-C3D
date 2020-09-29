@@ -5,8 +5,8 @@ This is the implementation of 3-dimensional convolutional networks (C3D) approac
 
 ## Getting Started
 ### 1 Prerequisites  
-* Python3.6  
-* Tensorflow  
+* Python  3.x  
+* Tensorflow  1.x  
 * Opencv-python  
 * Pandas  
 
